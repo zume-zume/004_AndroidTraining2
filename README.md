@@ -11,7 +11,7 @@ Android開発を行うにあたっての基礎知識をモスモスするため�
 →初期画面用のレイアウトファイル  
 ・ConstraintLayout：画面部品を相対的に配置  
 ・LinearLayout：入門者にも扱いやすい。画面部品を縦横に並べて配置  
-・他にもTableLayout、FrameLayout、RelatibeLayoutがあるけど、割愛
+・他にもTableLayout、FrameLayout、RelativeLayoutがあるけど、割愛
   
 # 用語のメモメモ  
 用語のメモ↓

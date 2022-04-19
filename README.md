@@ -9,6 +9,26 @@ Android開発を行うにあたっての基礎知識をモスモスするため�
 
 ## res/layout/activity_main.xml
 →初期画面用のレイアウトファイル  
-・ConstraintLayout：柔軟な画面が作成できる一方、ある程度操作になれている必要があるよ  
-・LinearLayout：入門者にも扱いやすい？  
+・ConstraintLayout：画面部品を相対的に配置  
+・LinearLayout：入門者にも扱いやすい。画面部品を縦横に並べて配置  
+・他にもTableLayout、FrameLayout、RelatibeLayoutがあるけど、割愛
+  
+# 用語のメモメモ  
+用語のメモ↓
 
+## apk  
+.apkの拡張子を持つAndroidにインストールできるアプリケーションファイル  
+ZIPファイルのようなもの  
+
+参考：https://jp.malavida.com/faq/malavida-app-store/android/what-is-an-apk-and-what-is-it-for.html#gref  
+  
+## ビュー（View）  
+画面部品そのもので、ウィジェットとも呼ぶよ。  
+色んなビューがあるので、覚えておくこと  
+* TextView：文字列の表示
+* EditText：テキストボックス（数字のみ等の入力制限もできる）
+* Button：ボタン
+* radioButton：ラジオボタン
+などなど  
+
+## 

@@ -38,18 +38,18 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, menuList);
         // リストビューにアダプタオブジェクトを設定
         lvMenu.setAdapter(adapter);
+        // リストビューにリスナーを設定
+        lvMenu.setOnItemClickListener(new ListItemClickListener());
     }
 
     // リストがタップされた時の処理が記述されたメンバクラス
     private class ListItemClickListener implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            // タップされた時のアイスの名前
-            String item = (String) parent.getItemAtPosition(position);
-            // トーストで表示する文字列を生成
-            String show = "あなたが選んだアイス";
-            // トーストの表示
-            Toast.makeText(MainActivity.this, show, Toast.LENGTH_LONG).show();
+            // 注文確認ダイアログフラグメントオブジェクトを生成
+            OrderConfirmDialogFragment dialogFragment = new OrderConfirmDialogFragment();
+            // ダイアログ表示
+            dialogFragment.show(getSupportFragmentManager(), "OrderConfirmDialogFragment");
         }
     }
 }

@@ -48,7 +48,7 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 * EditText：テキストボックス（数字のみ等の入力制限もできる）
 * Button：ボタン
 * radioButton：ラジオボタン
-* CheckBox：チャックボックス
+* CheckBox：チェックボックス
 * Spinner：ドロップダウンリスト
 * ListView：リスト表示
 * SeekBar：スライダー
@@ -63,6 +63,13 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 引数2:CharSequence text→表示する文字列  
 引数3:int duration→トーストの長さをToastクラスの定数で指定。Toast.LENGTH_LONGと、~_SHORTの二種類しかない
 
+## アダプタ(Adapter)
+リストビューに表示するリストデータを管理して、リストビューの各行にそのリストデータを当てはめていく働きをするオブジェクト  
+* ArrayAdapter:元データとしてLIST（配列）を利用するアダプタクラス
+* SimpleAdapter：元データとしてList<Map<String,?>>を利用するアダプタクラス。XMLやJSONデータの格納ができる。
+* SimpleCursorAdapter：元データとしてCursorオブジェクト（※）を利用するアダプタクラス。
+　※Cursorオブジェクトは、Android端末内のDBを利用する際、SELECT文の結果が格納されたもの。
+
 ## MinimumSDK  
 アプリが動作する最小のAPIレベル。たとえば「APIレベル16」を指定すると、  
 「APIレベル15」以前のAndroidOSでは動作が保証されない。  
@@ -74,8 +81,17 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 drawable：アプリで静止画像を表示する必要がある場合、Drawableクラスとそのサブクラスを使用して、図形と画像を描画できる。  
 mipmap：3Dで使われていて、遠くの物体には荒いテクスチャ。近くの物体には細かいテクスチャを適用して、クオリティとメモリを両立させる技術。  
   
-  
-  
+## Rクラス  
+リソースを管理してくれるクラス。　　
+具体的には、resフォルダ内のファイルに記述された「@+id」の値などのリソースをjava側から効率よく  
+利用できるように使われるint型の定数クラスのこと。クラスの中の定数はR値と呼ばれる。  
+
+ちなみに、AndroidSDKでよういされたリソースもR値が割り当てられており、そのクラスがAndroid.R。  
+アプリ内の独自のRクラスとクラス名が同じなので、Android.Rクラスをインポートしてしまうと、  
+独自のRクラスが呼び出されなくなってしまうので、インポートしないようにすること。
+`Android.R.layout.simple_list_item_1`
+のように記述すること。  
+
 # 困りごと
 
 ## エミュレータがフリーズしたとき

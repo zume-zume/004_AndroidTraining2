@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">イベントとリスナサンプル</string>
-    <string name="tx_sample">お名前を入力してください。</string>
-    <string name="bt_click">表示</string>
+    <string name="app_name">リスト選択サンプル</string>
+    <string-array name="lv_menu">
+        <item>ハーゲンダッツ</item>
+        <item>チョコモナカジャンボ</item>
+        <item>爽</item>
+        <item>牧場しぼり</item>
+        <item>もう</item>
+        <item>トウキビアイス</item>
+    </string-array>
 </resources>

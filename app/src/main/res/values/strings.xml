@@ -1,11 +1,6 @@
 <resources>
-    <string name="app_name">リスト選択サンプル2</string>
-    <string name="dialog_title">注文確認</string>
-    <string name="dialog_msg">注文された定食を注文します。よろしいですか？</string>
-    <string name="dialog_btn_ok">注文</string>
-    <string name="dialog_btn_ng">キャンセル</string>
-    <string name="dialog_btn_nu">問い合わせ</string>
-    <string name="dialog_ok_toast">ご注文ありがとうございます。</string>
-    <string name="dialog_ng_toast">ご注文をキャンセルしました。</string>
-    <string name="dialog_nu_toast">問い合わせ内容をお知らせください。</string>
+    <string name="app_name">画面遷移サンプル</string>
+    <string name="tv_thx_title">注文完了</string>
+    <string name="tv_thx_desk">以下のメニューのご注文を受け付けました。\nご注文ありがとうございます。</string>
+    <string name="tv_thx_back">リストに戻る</string>
 </resources>

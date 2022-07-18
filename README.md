@@ -66,11 +66,11 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 ## インテント(Intent)
 明示的インテントと暗黙的インテントがある。  
 明示的インテントだと、例えば、
-`intent.putExtra("AAA", xxx);`
-`startActivity(intent);`
+```intent.putExtra("AAA", xxx);```
+```startActivity(intent);```
 こんな感じでインテントに情報を詰めて、アクティビティを指定して起動して、
-`Intent intent = getIntent();`
-`intent.getStringExtra("AAA");`
+```Intent intent = getIntent();```
+```intent.getStringExtra("AAA");```
 起動されるアクティビティ側で情報を受け取る。  
   
 ## アダプタ(Adapter)
@@ -81,7 +81,7 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 　※Cursorオブジェクトは、Android端末内のDBを利用する際、SELECT文の結果が格納されたもの。
   
 ### SimpleAdapter(シンプルアダプター)
-`SimpleAdapter(Context context, List<Map<>String, ?>, int resource, string[] from, int[] to)  `
+```SimpleAdapter(Context context, List<Map<>String, ?>, int resource, string[] from, int[] to)```
 第一引数：コンテキスト。「Activity.this」  
 第二引数：リストデータ  
 第三引数：リストビューのレイアウト  
@@ -100,14 +100,14 @@ drawable：アプリで静止画像を表示する必要がある場合、Drawab
 mipmap：3Dで使われていて、遠くの物体には荒いテクスチャ。近くの物体には細かいテクスチャを適用して、クオリティとメモリを両立させる技術。  
   
 ## Rクラス  
-リソースを管理してくれるクラス。　　
+リソースを管理してくれるクラス。  
 具体的には、resフォルダ内のファイルに記述された「@+id」の値などのリソースをjava側から効率よく  
 利用できるように使われるint型の定数クラスのこと。クラスの中の定数はR値と呼ばれる。  
 
 ちなみに、AndroidSDKでよういされたリソースもR値が割り当てられており、そのクラスがAndroid.R。  
 アプリ内の独自のRクラスとクラス名が同じなので、Android.Rクラスをインポートしてしまうと、  
 独自のRクラスが呼び出されなくなってしまうので、インポートしないようにすること。
-`Android.R.layout.simple_list_item_1`
+```Android.R.layout.simple_list_item_1```
 のように記述すること。  
 
 ## ログ・ログレベル

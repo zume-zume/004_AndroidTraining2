@@ -63,6 +63,16 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 引数2:CharSequence text→表示する文字列  
 引数3:int duration→トーストの長さをToastクラスの定数で指定。Toast.LENGTH_LONGと、~_SHORTの二種類しかない
 
+## インテント(Intent)
+明示的インテントと暗黙的インテントがある。  
+明示的インテントだと、例えば、
+`intent.putExtra("AAA", xxx);`
+`startActivity(intent);`
+こんな感じでインテントに情報を詰めて、アクティビティを指定して起動して、
+`Intent intent = getIntent();`
+`intent.getStringExtra("AAA");`
+起動されるアクティビティ側で情報を受け取る。  
+  
 ## アダプタ(Adapter)
 リストビューに表示するリストデータを管理して、リストビューの各行にそのリストデータを当てはめていく働きをするオブジェクト  
 * ArrayAdapter:元データとしてLIST（配列）を利用するアダプタクラス
@@ -71,13 +81,13 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 　※Cursorオブジェクトは、Android端末内のDBを利用する際、SELECT文の結果が格納されたもの。
   
 ### SimpleAdapter(シンプルアダプター)
-SimpleAdapter(Context context, List<Map<>String, ?>, int resource, string[] from, int[] to)  
-第一引数：コンテキスト。「Activity.this」
-第二引数：リストデータ
-第三引数：リストビューのレイアウト
-第四引数：各画面部品に割り当てるデータを表すMapのキー名
-第五引数：fromに記載のMapのキー名に対応してデータを割り当てられる画面部品のR値の配列
-
+`SimpleAdapter(Context context, List<Map<>String, ?>, int resource, string[] from, int[] to)  `
+第一引数：コンテキスト。「Activity.this」  
+第二引数：リストデータ  
+第三引数：リストビューのレイアウト  
+第四引数：各画面部品に割り当てるデータを表すMapのキー名  
+第五引数：fromに記載のMapのキー名に対応してデータを割り当てられる画面部品のR値の配列  
+  
 ## MinimumSDK  
 アプリが動作する最小のAPIレベル。たとえば「APIレベル16」を指定すると、  
 「APIレベル15」以前のAndroidOSでは動作が保証されない。  
@@ -100,9 +110,29 @@ mipmap：3Dで使われていて、遠くの物体には荒いテクスチャ。
 `Android.R.layout.simple_list_item_1`
 のように記述すること。  
 
+## ログ・ログレベル
+| ログレベル | 内容 | 対応メソッド |
+----|----|----
+| Assert | 絶対に発生してはいけない問題 | wft() |
+| Error | エラーを引き起こした問題 | e() |
+| Warning | エラーとは言えない潜在的な問題 | w() |
+| Info | 通常の使用で発生 | i() |
+| Debug | 詳細なメッセージ（製品版アプリでも出る） | d() |
+| Verbose | 詳細なメッセージ（製品版アプリでは出ない） | v() |
+  
+ログの確認は、Logcatで行う。検索窓にキーワードを入力することで、ログを絞り込むことができる。  
+Logcat右上でログフィルタリングを設定できる。
+| フィルタ名 | 内容 |
+----|----
+| Show only selected application | 現在実行中のアプリのログのみ | 
+| Firebase | Firebaseに関するログを出力 | 
+| No filters | そのデバイスで実行されている全てのアプリのログ | 
+| Edit Filter Configuration | カスタムフィルタを作成するためのダイアログの表示 | 
+  
+
 # 困りごと
 
-## エミュレータがフリーズしたとき
+## エミュレータがフリーズした・真っ暗になったとき
 Device(AVD)Manager > 起動するエミュレータの▼ > WipeData  
 で、データを初期化することができる。ディスク上のサイズが大幅に削減されて、初期化されたことがわかる。
 

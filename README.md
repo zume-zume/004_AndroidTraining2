@@ -66,11 +66,15 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 ## インテント(Intent)
 明示的インテントと暗黙的インテントがある。  
 明示的インテントだと、例えば、  
-```intent.putExtra("AAA", xxx);```  
-```startActivity(intent);```  
+```
+intent.putExtra("AAA", xxx);
+startActivity(intent);
+```
 こんな感じでインテントに情報を詰めて、アクティビティを指定して起動して、  
-```Intent intent = getIntent();```  
-```intent.getStringExtra("AAA");```  
+```
+Intent intent = getIntent();
+intent.getStringExtra("AAA");
+```
 起動されるアクティビティ側で情報を受け取る。  
   
 ## アダプタ(Adapter)

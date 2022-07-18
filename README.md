@@ -58,7 +58,7 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
   
 ## トースト(Toast)
 画面下部に文字列を表示させて、そのうち消えるポップアップみたいな機能  
-`Toast.makeText(引数1, 引数2, 引数3).show()`
+```Toast.makeText(引数1, 引数2, 引数3).show()```  
 引数1:Context context→トーストを表示させるアクティビティオブジェクト。通常は「アクティビティクラス名.this」か、getApplicationContext()の戻り値を使う  
 引数2:CharSequence text→表示する文字列  
 引数3:int duration→トーストの長さをToastクラスの定数で指定。Toast.LENGTH_LONGと、~_SHORTの二種類しかない
@@ -66,11 +66,11 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 ## インテント(Intent)
 明示的インテントと暗黙的インテントがある。  
 明示的インテントだと、例えば、
-```intent.putExtra("AAA", xxx);```
-```startActivity(intent);```
+```intent.putExtra("AAA", xxx);```  
+```startActivity(intent);```  
 こんな感じでインテントに情報を詰めて、アクティビティを指定して起動して、
-```Intent intent = getIntent();```
-```intent.getStringExtra("AAA");```
+```Intent intent = getIntent();```  
+```intent.getStringExtra("AAA");```  
 起動されるアクティビティ側で情報を受け取る。  
   
 ## アダプタ(Adapter)
@@ -81,7 +81,7 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 　※Cursorオブジェクトは、Android端末内のDBを利用する際、SELECT文の結果が格納されたもの。
   
 ### SimpleAdapter(シンプルアダプター)
-```SimpleAdapter(Context context, List<Map<>String, ?>, int resource, string[] from, int[] to)```
+```SimpleAdapter(Context context, List<Map<>String, ?>, int resource, string[] from, int[] to)```  
 第一引数：コンテキスト。「Activity.this」  
 第二引数：リストデータ  
 第三引数：リストビューのレイアウト  

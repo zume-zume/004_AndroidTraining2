@@ -69,6 +69,14 @@ getApplicationContext()の戻り値を利用する方法もあるが、これだ
 * SimpleAdapter：元データとしてList<Map<String,?>>を利用するアダプタクラス。XMLやJSONデータの格納ができる。
 * SimpleCursorAdapter：元データとしてCursorオブジェクト（※）を利用するアダプタクラス。
 　※Cursorオブジェクトは、Android端末内のDBを利用する際、SELECT文の結果が格納されたもの。
+  
+### SimpleAdapter(シンプルアダプター)
+SimpleAdapter(Context context, List<Map<>String, ?>, int resource, string[] from, int[] to)  
+第一引数：コンテキスト。「Activity.this」
+第二引数：リストデータ
+第三引数：リストビューのレイアウト
+第四引数：各画面部品に割り当てるデータを表すMapのキー名
+第五引数：fromに記載のMapのキー名に対応してデータを割り当てられる画面部品のR値の配列
 
 ## MinimumSDK  
 アプリが動作する最小のAPIレベル。たとえば「APIレベル16」を指定すると、  

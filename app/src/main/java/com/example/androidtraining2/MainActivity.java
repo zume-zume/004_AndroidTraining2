@@ -2,7 +2,10 @@ package com.example.androidtraining2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -44,5 +47,26 @@ public class MainActivity extends AppCompatActivity {
         SimpleAdapter adapter = new SimpleAdapter(MainActivity.this, menuList, android.R.layout.simple_list_item_2, from, to);
         // アダプタの登録
         lvMenu.setAdapter(adapter);
+        // リストタップのリスナクラス登録
+        lvMenu.setOnItemClickListener(new ListItemClickListener());
+    }
+
+    // リストがタップされた時の処理が記述されたメンバクラス
+    private class ListItemClickListener implements AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            // タップされた行のデータを取得
+            Map<String, String> item = (Map<String, String>) parent.getItemAtPosition(position);
+            // 定食名と金額を取得
+            String menuName = item.get("name");
+            String menuPrice = item.get("price");
+            // インテントオブジェクトを生成
+            Intent intent = new Intent(MainActivity.this, MenuThanksActivity.class);
+            // 第二画面に送るデータを格納
+            intent.putExtra("menuName", menuName);
+            intent.putExtra("menuPrice", menuPrice);
+            // 第二画面を起動
+            startActivity(intent);
+        }
     }
 }

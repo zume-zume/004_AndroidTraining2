@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             // タップされた行のデータを取得
+            @SuppressWarnings("unchecked")
             Map<String, String> item = (Map<String, String>) parent.getItemAtPosition(position);
             // 定食名と金額を取得
             String menuName = item.get("name");

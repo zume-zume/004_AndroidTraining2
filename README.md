@@ -113,6 +113,26 @@ mipmap：3Dで使われていて、遠くの物体には荒いテクスチャ。
 独自のRクラスが呼び出されなくなってしまうので、インポートしないようにすること。
 ```Android.R.layout.simple_list_item_1```
 のように記述すること。  
+  
+## MenuResource
+アクションバーにオプションメニューを表示するためのリソース
+  
+### showAsAction
+アプリケーションバーに表示されるタイミングと方法を指定することができる。  
+  
+* ifRoom:空きがある場合のみ使う。ifRoomのアイテムのスペースがない場合は、オーバーフローメニューに表示される
+* withTitle:アクション項目にタイトルテキストも含む。|(パイプ)で区切ることで、他のフラグとともにフラグセットにできる。
+* never:アプリバーには配置できない。代わりに、アプリバーのオーバーフローメニューの項目にリストする。
+* always:常にこのアイテムをアプリバーに配置する。複数の項目を設定すると、アプリバーのUIを被ってしまうことがある。
+* collapseActionView:ユーザーがウィジェットを操作していないときにウィジェットを表示する。（動的にツールバーを変更できる）
+  
+## インフレータ(inflater)
+指定した.xmlのレイアウト(View)を利用できる仕組み  
+こんな感じで使う
+```
+LayoutInflater inflater = (LayoutInflater) context.SystemService(Context.LAYOUT_INFLATER_SERVICE)
+View view = inflater.inflate(R.layou_sample, root);
+```
 
 ## ログ・ログレベル
 | ログレベル | 内容 | 対応メソッド |

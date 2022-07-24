@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -154,5 +156,14 @@ public class MainActivity extends AppCompatActivity {
             // 第二画面を起動
             startActivity(intent);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // メニューインフレーターの取得
+        MenuInflater inflater = getMenuInflater();
+        // オプションメニュー用.xmlファイルをインフレート
+        inflater.inflate(R.menu.menu_options_menu_list, menu);
+        return true;
     }
 }

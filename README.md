@@ -126,6 +126,18 @@ mipmap：3Dで使われていて、遠くの物体には荒いテクスチャ。
 * always:常にこのアイテムをアプリバーに配置する。複数の項目を設定すると、アプリバーのUIを被ってしまうことがある。
 * collapseActionView:ユーザーがウィジェットを操作していないときにウィジェットを表示する。（動的にツールバーを変更できる）
   
+### 戻るボタン
+XMLの記述はしなくても、onCreate()メソッドで、アクションバーに対して  
+setDisplayHomeAsUpEnabled(true)と指定してあげることで表示させることができる。  
+R値は、AndroidSDKで用意されたandroid.R.id.homeを使う  
+
+### コンテキストメニュー(contextMenu)
+画面を長押し（タップし続ける）ことによって表示されるメニュー  
+コンテキストメニューを表示したいActivityのonCreate()メソッドに以下の記述をする  
+```
+registerForContextMenu();
+```
+
 ## インフレータ(inflater)
 指定した.xmlのレイアウト(View)を利用できる仕組み  
 こんな感じで使う

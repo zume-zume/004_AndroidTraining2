@@ -1,10 +1,11 @@
 package com.example.androidtraining2;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class MenuThanksActivity extends AppCompatActivity {
@@ -26,10 +27,29 @@ public class MenuThanksActivity extends AppCompatActivity {
         // TextViewに定食名と金額を表示
         tvMenuName.setText(menuName);
         tvMenuPrice.setText(menuPrice);
+
+        // アクションバーを取得
+        ActionBar actionBar = getSupportActionBar();
+        // アクションバーの戻るボタンを有効に設定
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
     }
 
-    // 戻るボタンをタップしたときの処理
-    public void onBackButtonClick(View view) {
-        finish();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // 戻り値用の変数を初期値trueで用意する
+        boolean returnVal = true;
+        // 選択されたメニューIDを取得
+        int itemId = item.getItemId();
+        // 選択されたメニューが戻るの場合、アクティビティを終了
+        if (itemId == android.R.id.home) {
+            finish();
+        } else {
+            returnVal = super.onOptionsItemSelected(item);
+        }
+        return returnVal;
     }
+
+
 }
